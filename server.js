@@ -1,10 +1,18 @@
+//Require express
 const express = require('express');
 
+//Require function middleware verifyTime
+var verifyTime = require('./middleware');
+
+//Get instance from express
 const app = express();
 
-const PORT = 5000;
+//Set the port to 5001
+const PORT = 5001;
 
 app.use(express.json());
+
+app.use(verifyTime) ;
 
 //DB
 let users= [
